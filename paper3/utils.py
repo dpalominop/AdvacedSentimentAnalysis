@@ -70,11 +70,15 @@ def tokenize(original_text, label):
     # Remove dots in words
     text = re.sub(r'(\w+)\.(\w+)', r'\1\2', text)
 
+    #acento
     text = re.sub(r"([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+", r"\1", 
                 unicodedata.normalize( "NFD", text), 0, re.I
                 )
     
     text = unicodedata.normalize( 'NFC', text)
+
+    #@
+    text = re.sub(r'@[A-Za-z0-9]+','',text)
 
     clean_text = text
 

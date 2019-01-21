@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# paper2
+paper2/data
+paper2/samples
+TASS2015/

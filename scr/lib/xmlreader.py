@@ -23,7 +23,7 @@ def readXML(xmlFIle):
         date = tweet.find('date').text
         lang = tweet.find('lang').text
         
-        if (content != None) and (polarity != 0):
+        if (content != None) and (polarity != 2):
             tweet = tw.Tweet(tweet_id, user, date, lang, content, polarity)
             tweets.append(tweet)
 

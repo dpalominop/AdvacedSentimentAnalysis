@@ -1,4 +1,4 @@
-__author__ = 'Iosu'
+__author__ = 'Daniel Palomino'
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer

@@ -1,4 +1,4 @@
-__author__ = 'Iosu'
+__author__ = 'Daniel Palomino'
 
 import xml.etree.ElementTree as ET
 import Tweet as tw

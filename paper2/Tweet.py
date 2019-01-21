@@ -1,4 +1,4 @@
-__author__ = 'Iosu'
+__author__ = 'Daniel Palomino'
 
 class Tweet:
 

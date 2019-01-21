@@ -8,7 +8,7 @@ from sklearn.metrics import precision_recall_fscore_support
 import sklearn.model_selection as cv
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import normalize
-import xmlreader
+import lib.xmlreader
 import unicodedata
 
 def tokenize(original_text, label):

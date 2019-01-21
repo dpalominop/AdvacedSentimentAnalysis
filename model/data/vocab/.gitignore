@@ -1,9 +1,0 @@
-*.word2vec
-*.npy
-
-#w2v_model_cbow.word2vec
-#w2v_model_cbow.word2vec.trainables.syn1neg.npy
-#w2v_model_cbow.word2vec.wv.vectors.npy
-#w2v_model_sg.word2vec
-#w2v_model_sg.word2vec.trainables.syn1neg.npy
-#w2v_model_sg.word2vec.wv.vectors.npy

@@ -1,7 +1,7 @@
 __author__ = 'Daniel Palomino'
 
 import xml.etree.ElementTree as ET
-import Tweet as tw
+import lib.Tweet as tw
 
 
 def readXML(xmlFIle):
@@ -14,8 +14,8 @@ def readXML(xmlFIle):
         content = tweet.find('content').text
         sentiment = tweet.find('sentiment')
         polarity = sentiment.find('polarity').find('value').text
-        polarity = treeLevels(polarity)
-        
+        #polarity = treeLevels(polarity)
+        polarity = polarityTagging4(polarity)
         # Other info:
         
         tweet_id = int(tweet.find('tweetid').text)
@@ -23,7 +23,7 @@ def readXML(xmlFIle):
         date = tweet.find('date').text
         lang = tweet.find('lang').text
         
-        if content != None:
+        if (content != None) and (polarity != 0):
             tweet = tw.Tweet(tweet_id, user, date, lang, content, polarity)
             tweets.append(tweet)
 
@@ -69,6 +69,22 @@ def treeLevels(polarity):
     elif (polarity.__eq__('NEU')):
         polarity = 2
     elif (polarity.__eq__('NONE')):
+        polarity = 2
+
+    return polarity
+
+def polarityTagging4(polarity):
+    if (polarity.__eq__('NONE')):
+        polarity = 0
+    elif (polarity.__eq__('N+')):
+        polarity = 1
+    elif (polarity.__eq__('N')):
+        polarity = 1
+    elif (polarity.__eq__('NEU')):
+        polarity = 0
+    elif (polarity.__eq__('P')):
+        polarity = 2
+    elif (polarity.__eq__('P+')):
         polarity = 2
 
     return polarity

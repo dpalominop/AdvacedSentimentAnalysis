@@ -9,7 +9,7 @@ import sklearn.model_selection as cv
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import normalize
 import xmlreader
-
+import unicodedata
 
 def tokenize(original_text, label):
     caps = sum([1 for ch in original_text if 'A' <= ch <= 'Z'])
@@ -69,7 +69,17 @@ def tokenize(original_text, label):
     text = re.sub(r' [x:=]-?[\(\[\|\\/\{<]', r' ', text)
     # Remove dots in words
     text = re.sub(r'(\w+)\.(\w+)', r'\1\2', text)
+
+    #acento
+    text = re.sub(r"([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+", r"\1", 
+                unicodedata.normalize( "NFD", text), 0, re.I
+                )
     
+    text = unicodedata.normalize( 'NFC', text)
+
+    #@
+    text = re.sub(r'@[A-Za-z0-9]+','',text)
+
     clean_text = text
 
     # Split in phrases

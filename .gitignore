@@ -107,3 +107,6 @@ venv.bak/
 paper2/data
 paper2/samples
 TASS2015/
+
+# paper1
+model/

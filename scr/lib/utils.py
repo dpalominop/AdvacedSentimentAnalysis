@@ -79,7 +79,9 @@ def tokenize(original_text, label):
 
     #@
     text = re.sub(r'@[A-Za-z0-9]+','',text)
-
+    
+    # hasg-tag
+    text = re.sub("[^a-zA-Z]", ' ', text)
     clean_text = text
 
     # Split in phrases
@@ -179,7 +181,9 @@ def tokenizer(original_text):
 
     #@
     text = re.sub(r'@[A-Za-z0-9]+','',text)
-
+    
+    # hasg-tag
+    text = re.sub("[^a-zA-Z]", ' ', text)
     clean_text = text
 
     # Split in phrases

@@ -1,3 +1,7 @@
+# Advanced Sentiment Analysis
+
+This project compare different advances techniques for Sentiment Analysis in Spanish Tweets using data samples of [Sepln-TASS](http://www.sepln.org/workshops/tass/)
+
 ## Vocabulary Size
 
 | Freq     | TASS 2017 | TASS 2018   |
@@ -34,6 +38,7 @@
 | 3        | 73.6      | 63.13     | 
 
 
+# Extras
 ## Word2Vec embeddings from SBWC
 
 #### Embeddings

@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 import lib.Tweet as tw
 
 
-def readXML(xmlFIle):
+def readXML(xmlFIle, Lvls):
     tree = ET.parse(xmlFIle)
     root = tree.getroot()
 
@@ -23,7 +23,7 @@ def readXML(xmlFIle):
         date = tweet.find('date').text
         lang = tweet.find('lang').text
         
-        if (content != None): # and (polarity != 2):
+        if (content != None and (polarity in Lvls)):
             tweet = tw.Tweet(tweet_id, user, date, lang, content, polarity)
             tweets.append(tweet)
 
@@ -74,17 +74,17 @@ def treeLevels(polarity):
     return polarity
 
 def polarityTagging(polarity):
-    if (polarity.__eq__('NONE')):
-        polarity = 2
-    elif (polarity.__eq__('N+')):
+
+    if (polarity.__eq__('N+')):
         polarity = 0
     elif (polarity.__eq__('N')):
         polarity = 0
-    elif (polarity.__eq__('NEU')):
-        polarity = 3
     elif (polarity.__eq__('P')):
         polarity = 1
     elif (polarity.__eq__('P+')):
         polarity = 1
-
+    elif (polarity.__eq__('NEU')):
+        polarity = 2
+    elif (polarity.__eq__('NONE')):
+        polarity = 3
     return polarity

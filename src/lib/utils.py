@@ -157,13 +157,13 @@ def tokenizer(original_text):
     # Remove repeated exclamation (and also question) marks
     text = re.sub(r'([^!\?])(\?|!){2,}(\Z|[^!\?])', r'\1 \n\3', text)
     # Remove single question marks
-    text = re.sub(r'([^!\?])\?(\Z|[^!\?])', r'\1 \n\2', text)
+    #text = re.sub(r'([^!\?])\?(\Z|[^!\?])', r'\1 \n\2', text)
     # Remove single exclamation marks
-    text = re.sub(r'([^!\?])!(\Z|[^!\?])', r'\1 \n\2', text)
+    #text = re.sub(r'([^!\?])!(\Z|[^!\?])', r'\1 \n\2', text)
     # Remove repeated (3+) letters: cooool --> cool, niiiiice --> niice
-    text = re.sub(r'([a-zA-Z])\1\1+(\w*)', r'\1\1\2', text)
+    #text = re.sub(r'([a-zA-Z])\1\1+(\w*)', r'\1\1\2', text)
     # Do it again in case we have coooooooollllllll --> cooll
-    text = re.sub(r'([a-zA-Z])\1\1+(\w*)', r'\1\1\2', text)
+    #text = re.sub(r'([a-zA-Z])\1\1+(\w*)', r'\1\1\2', text)
     # Remove smileys (big ones, small ones, happy or sad)
     text = re.sub(r' [8x;:=]-?(?:\)|\}|\]|>){2,}', r' ', text)
     text = re.sub(r' (?:[;:=]-?[\)\}\]d>])|(?:<3)', r' ', text)

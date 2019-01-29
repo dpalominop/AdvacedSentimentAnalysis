@@ -15,7 +15,7 @@ def readXML(xmlFIle):
         sentiment = tweet.find('sentiment')
         polarity = sentiment.find('polarity').find('value').text
         #polarity = treeLevels(polarity)
-        polarity = polarityTagging4(polarity)
+        polarity = polarityTagging(polarity)
         # Other info:
         
         tweet_id = int(tweet.find('tweetid').text)
@@ -23,7 +23,7 @@ def readXML(xmlFIle):
         date = tweet.find('date').text
         lang = tweet.find('lang').text
         
-        if (content != None) and (polarity != 2):
+        if (content != None): # and (polarity != 2):
             tweet = tw.Tweet(tweet_id, user, date, lang, content, polarity)
             tweets.append(tweet)
 
@@ -73,7 +73,7 @@ def treeLevels(polarity):
 
     return polarity
 
-def polarityTagging4(polarity):
+def polarityTagging(polarity):
     if (polarity.__eq__('NONE')):
         polarity = 2
     elif (polarity.__eq__('N+')):
@@ -81,7 +81,7 @@ def polarityTagging4(polarity):
     elif (polarity.__eq__('N')):
         polarity = 0
     elif (polarity.__eq__('NEU')):
-        polarity = 2
+        polarity = 3
     elif (polarity.__eq__('P')):
         polarity = 1
     elif (polarity.__eq__('P+')):

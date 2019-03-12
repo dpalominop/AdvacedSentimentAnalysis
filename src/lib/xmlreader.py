@@ -15,10 +15,10 @@ def readXML(xmlFIle, Lvls):
         sentiment = tweet.find('sentiment')
         polarity = sentiment.find('polarity').find('value').text
         #polarity = treeLevels(polarity)
-        print(polarity)
+        #print(polarity)
         polarity = polarityTagging(polarity)
         # Other info:
-        print(polarity)
+        #print(polarity)
         tweet_id = int(tweet.find('tweetid').text)
         user = tweet.find('user').text
         date = tweet.find('date').text

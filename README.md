@@ -14,9 +14,9 @@ This project compare different advances techniques for Sentiment Analysis in Spa
 
 ## Task1: InterTASS Monolingual PE 2018
 
-|    TASS 2017 (Development)   |
-|------------------------------|
-|        |                         Test                       | Development |
+|                           TASS 2017 (Development)                         |
+|---------------------------------------------------------------------------|
+|    -   |                         Test                       | Development |
 |-------------------------------------------------------------|-------------| 
 |  Model |              Run             | Macro F1 | Accuracy |   Accuracy  | 
 |--------|------------------------------|----------|----------|-------------|

@@ -2,40 +2,27 @@
 
 This project compare different advances techniques for Sentiment Analysis in Spanish Tweets using data samples of [Sepln-TASS](http://www.sepln.org/workshops/tass/)
 
-## Vocabulary Size
+## Task 1: International TASS Corpus 2017 
 
-| Freq     | TASS 2017 | TASS 2018   |
-| -------- | --------- | ----------- |
-| 1        | 4227      | 3067        | 
-| 2        | 1240      | 800         |
-| 3        | 715       | 478         |
+|    TASS 2017 (Development)   |
+|------------------------------|
+|  Model | Macro F1 | Accuracy |
+|--------|----------|----------|
+|  CNN   |  0.330   | 0.77075  |
+|  SIF   |  0.733   | 0.773    |
+| ULMFit |	0.222	| 0.3837   |
 
-# Accuracy
+## Task1: InterTASS Monolingual PE 2018
 
-## CNN
-
-| Freq     | TASS 2017 | TASS 2018 |
-| -------- | --------- | --------- |
-| 1        | 77.86     | 76.11     | 
-| 2        | 73.0      | 71.64     | 
-| 3        | 74.6      | 70.64     | 
-
-
-## SIF Embedding + SVD(C=0.8)
-
-| Freq     | TASS 2017 | TASS 2018 |
-| -------- | --------- | --------- |
-| 1        | 73.10     | 70.10     | 
-| 2        | 69.90     | 62.70     | 
-| 3        | 64.30      | 58.20     |
-
-## ULMFit
-
-| Freq     | TASS 2017 | TASS 2018 |
-| -------- | --------- | --------- |
-| 1        | 70.93     | 70.64     | 
-| 2        | 71.46     | 69.65     | 
-| 3        | 73.6      | 63.13     | 
+|    TASS 2017 (Development)   |
+|------------------------------|
+|        |                         Test                       | Development |
+|-------------------------------------------------------------|-------------| 
+|  Model |              Run             | Macro F1 | Accuracy |   Accuracy  | 
+|--------|------------------------------|----------|----------|-------------|
+|  CNN   | cnn-btf-2019_03_13-04_12_55  |  0.387   |   0.432  |    0.755    |
+|  SIF   | SIF-M LP-2019_01_30-00_27_52 |  0.399   |   0.398  |    0.602    |
+| ULMFit | md3-2019_03_12-06_37_15      |  0.270   |   0.299  |    0.309    |
 
 
 # Extras

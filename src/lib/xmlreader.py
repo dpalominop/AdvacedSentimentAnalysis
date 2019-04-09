@@ -25,7 +25,7 @@ def readXML(xmlFIle, Lvls):
         lang = tweet.find('lang').text
         
         
-        if (content != None and (polarity in Lvls)):
+        if (content != None):# and (polarity in Lvls)):
             tweet = tw.Tweet(tweet_id, user, date, lang, content, polarity)
             tweets.append(tweet)
 
